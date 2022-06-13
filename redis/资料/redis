@@ -1,0 +1,294 @@
+redis
+
+1.什么是redis
+  C语言写的，非关系型数据库
+
+  1.他是nosql非关系型数据库：
+    非关系型数据库
+    1.高读写性能
+    2.数据库结构简单，多样灵活
+    3.cap定性
+  2.cap 
+    传统：acid 原子性、一致性、独立性、持久性
+    非关系型：cap：强一致性、可用性、分区容错性
+            只能保证两个点
+            - ca 传统oracel数据库 
+            - ap 大多数的网站架构选择
+            - cp redis、mongodb
+  3.支持数据持久化，简单的k-v类型数据。支持备份即master-slave模式
+
+2.官网
+  1. https://redis.io/documentation
+  2. 中文可能这个也还行： https://www.runoob.com/redis/redis-conf.html
+
+3.Redis索引都是从零开始
+
+4.五大类型 String、list、hash、set、Zset
+
+5.key关键字
+  keys *
+  exist key
+  move key db
+  expire key 
+  ttl key 查看还有多少秒过期，-1表示永不过期，-2表示已过期
+  type key
+
+6. 五大类型
+
+   - string
+	    set/get/del/append/strlen
+		Incr/decr/incrby/decrby,一定要是数字才能进行加减
+		getrange/setrange
+		setex(set with expire)键秒值/setnx(set if not exist)
+		mset/mget/msetnx
+		getset(先get再set)
+
+   - list
+        lpush/rpush/lrange
+		lpop/rpop
+		lindex，按照索引下标获得元素(从上到下)
+		llen
+		lrem key 删N个value
+		ltrim key 开始index 结束index，截取指定范围的值后再赋值给key
+		rpoplpush 源列表 目的列表
+		lset key index value
+		linsert key before/after 值1 值2
+     它是一个字符串链表，链表的操作无论是头和尾效率都极高，但假如
+     是对中间元素进行操作，效率就很惨淡了
+
+   - set
+        sadd/smembers/sismember
+		scard，获取集合里面的元素个数
+		srem key value 删除集合中元素
+		srandmember key 某个整数(随机出几个数)
+		spop key 随机出栈
+		smove key1 key2 在key1里某个值 作用是将key1里的某个值赋给key2
+		数学集合类
+		差集：sdiff
+		交集：sinter
+		并集：sunion
+    set不允许重复。如果重复添加，会添加失败
+
+   - Hash
+	    hset/hget/hmset/hmget/hgetall/hdel
+		hlen
+		hexists key 在key里面的某个值的key
+		hkeys/hvals
+		hincrby/hincrbyfloat
+		hsetnx
+    不要拿hash当成存对象的 
+
+   -zset
+     list与zset的区别
+	  (1) 相同点
+	    ① 二者都是有序的
+	    ② 二者都可以获得某一范围的元素
+	  (2) 二者区别
+		① 列表类型(list)是通过链表实现的，获取靠近两端的数据速度极快，而当元素增多后，
+		访问中间数据的速度会变慢,list允许重复，zset不允许重复。
+		② 有序集合类型(zset)使用散列表实现，所有即使读取位于中间部分的数据也很快
+	    ③ 列表(list)中不能简单的调整某个元素的位置，但是有序集合可以（通过更改分数实现）
+	    ④ 有序集合类型(zset)要比列表类型更耗内存
+     zadd/zrange
+	 Withscores
+	 zrangebyscore key 开始score 结束score
+	 withscores
+	 ( 不包含
+	 Limit 作用是返回限制
+	 limit 开始下标步 多少步
+	 zrem key 某score下对应的value值，作用是删除元素
+	 zcard/zcount key score区间/zrank key values值，作用是获得下标值/zscore key 对应值,获得分数
+	 zrevrank key values值，作用是逆序获得下标值
+	 zrevrange
+	 zrevrangebyscore key 结束score 开始score
+
+
+7.配置文件
+  1.config get *  -- 可以查看配置文件
+  2.config set xxx xxx  -- set设置配置文件
+  3.一般在etc目录下面，自己使用要拷贝一份出来，一定要保留原配置文件做备份
+    拷贝一份配置文件，按拷贝修改后的文件方式启动
+    redis-server /myredis/redis.conf
+    redis-cli -p 6379
+  4.大概知道配置文件可以配置些啥，具体自己工作中可以查看文档来配置
+    1.通用配置，连接数。内存大小、端口号
+    2.日志
+    3.持久化配置
+    4.主从复制的配置
+    5.安全配置，是否要密码等
+
+8.持久化
+   1.RDB--redis database
+     在指定时间间隔内，flok一个单独的子线程，copy主线程的数据保存磁盘
+     1.效率高，一致性差一点，Fork的时候，内存中的数据被克隆了一份，大致2倍的膨胀性需要考虑
+     2.rdb 保存的是dump.rdb文件
+     3.相关配置在redis.config文件SNAPSHOTTING快照区
+     4.一般备份文件放在备份机 ，恢复的 时候在备份机拷贝过来即可
+     5.命令save和bgsave
+       1.save 只管保存，其他不管，全部阻塞
+       2.bgsave Redis会在后台异步进行快照操作， 快照同时还可以响应客户端请求。
+
+     save设置：
+		save <seconds> <changes>
+		Redis 默认配置文件中提供了三个条件：
+		save 900 1
+		save 300 10
+		save 60 10000
+		分别表示 900 秒（15 分钟）内有 1 个更改，300 秒（5 分钟）内有 10 个更改以及 60 秒内有 10000 个更改。
+		指定在多长时间内，有多少次更新操作，就将数据同步到数据文件，可以多个条件配合
+		
+   2.aof--append only file
+     记录主机操作的处理读以外的操作命令记录
+     1.在redis.config文件APPEND ONLY MODE中配置，要使用配置是否开启
+     2.aof保存的是appendonly.aof文件
+     3.重写机制，文件越来越大之后可以开启，到一点阀值就会压缩命令
+     4.效率比rdb慢，同步效率高
+
+
+9.事务
+  redis的事务，只能是部分事务
+  1.常用命令
+  	DISCARD	取消事务，放弃执行事务块内的所有命令。
+	EXEC	执行所有事务块内的命令。
+	MULTI	标记一个事务块的开始。
+	UNWATCH	取消 WATCH 命令对所有 key 的监视。
+	WATCH key [key …]	监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断。
+  2.编译错误，全体连坐
+  3.运行时错误，冤头债主
+  4.watch监控
+    1.悲观锁，比较悲观，相当于锁表，安全性高，效率差
+    2.乐观锁，比较乐观，相当于锁行，一般用这个，对 每条操作记录加一个版本号，同时修改，
+       提交前要先看版本是不是最新，相当于svn
+
+10.发布订阅
+   有这个功能，但是一般公司不用
+
+11.主从复制
+   1.做备份用的
+   2.从库配置命令：slaveof 主库IP 主库端口
+   3.从库可以配置文件改成从机，也可以使用命令，但是关机在开机还需要在用命令指定
+   4.注意哪些情况
+     1.备份机对主机之前之后的数据都会备份
+     2.同样的命令主机执行，从机就不能执行了
+     3.不做配置，主机死了，从机还是从机，回来还是主机，从机死了，如果配置文件没配是从机，回来就不是从机了，
+     4.薪火相传：主机--从机--从机，这种模式主机死了，从机边主机，主机再回来也没啥用理论
+     5.哨兵模式：用一个哨兵进程来监控主机
+       1.新建sentinel.conf文件，名字绝不能错
+       2.机死哨兵通知从机，选出一个机器来做主机，主机回来就只能做从机了
+       3.启用哨兵
+         1.配置文件配置主机地址端口，指定投票数，从机投票到这个数做主机
+         2.redis-sentinel /这里是目录/sentinel.conf
+           redis-cli -p 6379
+
+
+
+
+
+
+
+
+
+开启redis： 
+brew services start redis
+//方式二
+redis-server /usr/local/etc/redis.conf
+
+redis-server
+
+ps axu | grep redis
+
+redis-cli shutdown
+
+sudo pkill redis-server
+
+
+关闭当前redis
+shutdown
+exit
+
+修改配置文件之前，需要先备份一份
+
+
+Homebrew安装的软件会默认在 /usr/local/Cellar/ 路径下
+redis的配置文件redis.conf存放在 **/usr/local/etc**  路径下
+
+
+缓存雪崩=缓存里的失效 
+方案：过期时间
+缓存穿透=恶意用户。
+方案:布隆过滤。ip拉黑
+缓存击穿=热点数据失效 
+方案：上锁。zookeeper。redis分布式锁
+
+缓存雪崩：大量缓存数据同时间失效，导致用户直接发起大量请求到数据库，产生瓶颈。
+1、生成随机失效的缓存时间数据；
+2、让缓存节点分布在不同的物理节点上；
+3、生成不失效的缓存数据；
+4、定时任务更新缓存数据；
+
+缓存穿透：用户请求数据，例如ID为负数，不存在缓存里，也不存在数据库里，会造成缓存穿透。
+1、无意义数据放入缓存，下一次相同请求就会命中缓存；
+2、IP过滤；
+3、参数校验；
+4、布隆过滤器；
+
+缓存失效：由于缓存热点键到时失效导致用户请求直接访问数据库
+1、用久缓存；
+2、分布式锁
+ a.单体应用—>互斥锁—>zookeeper ,redis实现。
+
+
+
+
+
+------------------------------------------
+redis-记
+1.cap：
+  c：强一致性
+  a：高可用性
+  p：分区容错性，分布式框架中用
+ redis通常是分布式框架用
+ 一般redis是cp
+ 关系型数据库 ca
+ 对数据一致性不高一般用ap
+
+2，五大类型，存和查要记住，各自使用场景，string特殊记住
+   常用：keys *，select 1/2/3,
+   五大类型：string，set、hash,zset,list
+
+3.rdb概述
+    1.优缺点
+	2.save设置：
+		save <seconds> <changes>
+		Redis 默认配置文件中提供了三个条件：
+		save 900 1
+		save 300 10
+		save 60 10000
+		分别表示 900 秒（15 分钟）内有 1 个更改，300 秒（5 分钟）内有 10 个更改以及 60 秒内有 10000 个更改。
+		指定在多长时间内，有多少次更新操作，就将数据同步到数据文件，可以多个条件配合
+
+
+4.事务
+  1.事务开启和提交
+  2.事务特点
+
+5.主从复制
+  薪火相传：
+  反客为主：哨兵模式
+
+
+6.待学
+Redis的集群：Redis分片的缺点、集群架构、集群操作基本命令。
+Lua脚本语言的介绍。
+Redis和Lua结合，Redis的Lua脚本编程，构建强大的Redis服务。
+Redis整合Spring等。
+Redis集群实现Tomcat集群的Session共享等
+
+
+
+
+
+
+
+
+

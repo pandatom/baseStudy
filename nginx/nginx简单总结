@@ -1,0 +1,106 @@
+nginx
+
+## 支持的主要功能
+	静态资源部署
+	Rewrite地址重写
+	正则表达式
+	反向代理
+	负载均衡
+	轮询、加权轮询、ip_hash、url_hash、fair
+	Web缓存
+	环境部署
+	高可用的环境
+	用户认证模块...
+	
+## 核心文件
+  nginx二进制可执行文件
+	nginx.conf配置文件
+	error.log错误的日志记录
+	access.log访问日志记录	
+
+## 安装
+  环境需求：
+  1.内核为2.6及以上版本的操作系统
+  2.GCC编译器
+  3.PCRE
+  4.zlib
+  5.OpenSSL
+
+## 卸载
+  步骤一：需要将nginx的进程关闭
+  ./nginx -s stop
+
+  步骤二:将安装的nginx进行删除
+  rm -rf /usr/local/nginx
+
+  步骤三:将安装包之前编译的环境清除掉
+  make clean
+
+## nginx的启动、重启、关闭
+启动：
+   /usr/lcoal/nginx/sbin下面 ./nginx
+   查询 ps -ef | grep nginx
+   查询pid cat /usr/local/nginx/logs/nginx.pid
+
+关闭：
+   ./nginx -s quit
+   或
+   1.查询PID
+   2.kill -signal PID
+   
+
+重启：
+  ./nginx -s reload
+  或
+  1.查询PID
+  2.或者重读配置文件 kill -HUP PID
+
+
+
+
+配置文件常见：
+   配置保存之后，先测试下：
+   1.nginx -t
+   2.nginx -s reload
+
+# 常见优化配置
+  1.静态资源做压榨配置
+  2.文件做缓存配置
+  3.文件做缓冲配置
+
+
+ nginx-ui
+  https://www.bilibili.com/video/BV1ov41187bq?p=2
+  https://mp.weixin.qq.com/s/fuHvvUqKGsQ5qBvYHo_Hug
+  https://www.nginxwebui.cn/news.html
+
+
+
+
+nginx -V (大写的V) 查看nginx安装那些库
+
+Gzip 压缩功能需要
+ngx_http_gzip_module模块
+ngx_http_gzip_static_module模块
+ngx_http_gunzip_module模块
+
+Gzip和sendfile共存问题，使用gzip_static指令 需要
+ngx_http_gzip_static_module
+
+Rewrite功能配置需要
+ngx_http_rewrite_module 库
+
+Nginx反向代理模块
+ngx_http_proxy_module`模块
+
+Nginx的SSL相关指令
+ngx_http_ssl_module模块
+
+Nginx是从0.7.48版开始提供缓存功能
+Nginx的web缓存服务主要是使用
+  `ngx_http_proxy_module`模块相关指令集来完成
+
+因为fair属于第三方模块实现的负载均衡。
+   	需要添加`nginx-upstream-fair`
+
+

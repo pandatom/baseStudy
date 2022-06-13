@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        axios.defaults.baseURL='www.baidu.com';
+
+        axios.defaults.methods='GET';
+
+        axios.defaults.timeout=1000;
+
+        axios({
+            method:'GET',
+            method:'POST'
+            url:'www.baidu.com',
+            data:{
+                name:'小明',
+                age:'19'
+            }  
+            cancelTaken:new axios.cancalTaken(function(){
+                .....
+            })
+        }).then(response=>{
+            console.log(response);
+        })
+
+
+       axios.get('www.baidu.com').then(response=>{
+
+       })
+
+       axios.post('www.baidu.com').then(repsonse=>{
+           
+       })
+
+       let reponse=axios.create({
+           method:'GET',
+           timeout:1000,
+       })
+
+       axios.interceptors.request.use({
+
+       }).then(response=>{
+
+       })
+
+       axios.interceptors.response.use({
+
+       }).then(response=>{
+
+       })
+
+    </script>
+    
+</body>
+</html>

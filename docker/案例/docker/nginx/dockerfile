@@ -1,0 +1,30 @@
+FROM centos
+
+#创建项目所需目录
+RUN mkdir -p /www/ctm/xcy-project/yun-app
+#创建这个目录是为了指定安装ningx路径
+RUN mkdir -p /www/server/nginx/conf
+
+#安装所需依赖
+RUN yum -y install gcc pcre-devel zlib-devel openssl-devel make vim
+#将nginx拷贝至软件目录下并解压
+ADD nginx-1.16.1.tar.gz /www/server
+#将配置好的nginx配置文件从本地拷贝至镜像中
+COPY nginx.conf /www/server/nginx/conf
+
+#编译安装nginx
+RUN cd /www/server/nginx-1.16.1 && ./configure --prefix=/www/server/nginx --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module && make && make install
+
+#删除包目录,安装完成就用不上了
+RUN rm -rf /www/server/nginx-1.16.1
+#指定进入容器后的工作目录
+WORKDIR /www/server/nginx
+
+#器运行时监听的端口,这里我就不设置了，nginx配置文件中我设置的8801，运行容器时候指定就行。
+#EXPOSE 8801
+
+#添加环境变量
+ENV PATH /www/server/nginx/sbin/:$PATH
+#当启动一个container时默认运行的命令，如果在启动container时赋予了command的话，那么定义的CMD中的命令将不会被
+#执行，而会去执行command的命令
+CMD /bin/sh -c 'nginx -g "daemon off;"'

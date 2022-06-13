@@ -1,0 +1,16 @@
+
+docker run -d -p 20:20 -p 21:21 -p 21100-21110:21100-21110 \
+-v /Users/changxiong/Downloads/temp/ftp-file:/home/vsftpd \
+-e FTP_USER=user \
+-e FTP_PASS=userpwd \
+-e PASV_ADDRESS=192.168.199.133 \
+-e PASV_MIN_PORT=21100 \
+-e PASV_MAX_PORT=21110 \
+--name vsftpd \
+--restart=always fauria/vsftpd
+
+
+开起匿名访问功能
+	1. vim /etc/vsftpd/vsftpd.conf
+	2. 修改 anonymous_enable=YES
+	3. 重启，然后 cd /var/ftp/ 查看
