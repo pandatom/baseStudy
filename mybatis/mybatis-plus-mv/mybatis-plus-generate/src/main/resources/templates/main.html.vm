@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/common-header::commonHeader('$!{table.comment}')">
+</head>
+<!--页面加载完成之前隐藏body-->
+<body style="display: none;">
+<div class="layui-row  workspace-body">
+    <div class="console-container">
+        <div class="content-body layui-col-space10">
+            <div class="layui-row layui-col-space12">
+                <div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+                    <h2 class="layui-colla-title">$!{table.comment}信息</h2>
+                    <!-- 工具集 -->
+                    <div class="tool-box">
+            <span class="fl">
+                <a class="layui-btn btn-sm btn-add" data-type="add"><i class="fa fa-plus"></i> 添加</a>
+                <a class="layui-btn layui-btn-danger" data-type="batchDel"><i class="fa fa-trash"></i> 批量删除</a>
+            </span>
+                        <span class="fr">
+                <span class="layui-form-label">搜索条件</span>
+                <div class="layui-input-inline">
+                    <input type="text" autocomplete="off" id="keyInput" placeholder="请输入名称搜索" class="layui-input">
+                </div>
+                <button class="layui-btn mgl-20" data-type="search"><i class="fa fa-search"></i> 查询</button>
+            </span>
+                        <div class="layui-clear"></div>
+                    </div>
+                    <!-- table -->
+                    <table class="layui-table" lay-filter="dateTable" lay-data="{
+        height:'full-200',
+        url:'listPage',
+        page:true,
+        method: 'post',
+        id:'dateTable',
+        loading: true,
+        size:'sm'}">
+                        <thead>
+                        <tr>
+                            <th lay-data="{checkbox:true, width:40,space: false, even: true}">ID</th>
+                            ## ----------  BEGIN 字段循环遍历  ----------
+                            #foreach($field in ${table.fields})
+                          	<th lay-data="{field:'${field.propertyName}', width:150}">${field.comment}</th>
+                            #end
+                            ## ----------  END 字段循环遍历  ----------
+                            <th lay-data="{fixed: 'right', width:140, align:'center',toolbar:'#barOption'}">操作</th>
+                        </tr>
+                        </thead>
+                    </table>
+                    <!-- 表格操作按钮集 -->
+                    <script type="text/html" id="barOption">
+                         <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="edit"><i class="fa fa-pencil"></i>
+                                                编辑</a>
+                         <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del"><i class="fa fa-trash"></i>
+                                                删除</a>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:include="common/common-script::commonScript"></div>
+
+<script type="text/javascript">
+    layui.use(['layer', 'table'], function () {
+        /**
+         * 定义按钮操作方法集合
+         * */
+        var active = {
+            search: function () {
+                //执行重载
+                layui.table.reload('dateTable', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    , where: {
+                        name: $("#keyInput").val()
+                    }
+                });
+            },
+            add: function () {
+                //新增表单页
+                popForm('新增$!{table.comment}', _ctx+'${table.entityPath}/add');
+            },
+            batchDel: function () {
+                var checkStatus = layui.table.checkStatus('dateTable'); //test即为基础参数id对应的值
+                if (checkStatus.data.length < 1) {
+                    return layer.msg("请先选择数据");
+                }
+                console.log(checkStatus.data) //获取选中行的数据
+                console.log(checkStatus.data.length) //获取选中行数量，可作为是否有选中行的条件
+                console.log(checkStatus.isAll) //表格是否全选*!/
+                var ids = new Array();
+                for (var i in checkStatus.data) {
+                    ids.push(checkStatus.data[i].id)
+                }
+                layer.confirm('确定删除？', function (index) {
+                    $.ajax({
+                        url: _ctx+"${table.entityPath}/batchDel",
+                        type: "POST",
+                        data: {'ids': ids},
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.code == 200) {
+                                //删除这一行
+                                // obj.del();
+                                layui.table.reload('dateTable');
+                                //关闭弹框
+                                layer.close(index);
+                                layer.msg("删除成功", {icon: 6});
+                                renderTree('#tree');
+
+                            } else {
+                                layer.msg("删除失败", {icon: 5});
+                            }
+                        },
+                        error: function (data) {
+                            debugger;
+                            layer.msg("删除失败：" + data.responseJSON.message, {icon: 5});
+                        }
+
+                    });
+                });
+            }
+        }
+        /**
+         * 绑定按钮事件
+         */
+        $('.layui-btn').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+        /**
+         * 绑定表格行内工具事件
+         */
+        layui.table.on('tool(dateTable)', function (obj) {
+            var data = obj.data;
+            switch (obj.event) {
+                case 'edit':
+                    //编辑页
+                    popForm('编辑$!{table.comment}', _ctx+'${table.entityPath}/edit?id=' + data.id);
+                    break;
+                case 'del':
+                    layer.confirm('确定删除？', function (index) {
+                        $.ajax({
+                            url: _ctx+"${table.entityPath}/del?id=" + data.id,
+                            type: "POST",
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.code == 200) {
+                                    //删除这一行
+                                    // obj.del();
+                                    layui.table.reload('dateTable');
+                                    renderTree('#tree');
+                                    //关闭弹框
+                                    layer.close(index);
+                                    layer.msg("删除成功", {icon: 6});
+                                } else {
+                                    layer.msg("删除失败", {icon: 5});
+                                }
+                            }
+
+                        });
+                    });
+                    break;
+                default:
+                    break;
+            }
+        });
+
+
+    });
+
+</script>
+<div th:replace="common/common-footer::commonFooter">
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/common-header::commonHeader('编辑$!{table.comment}')">
+</head>
+<!--页面加载完成之前隐藏body-->
+<body style="display: none;">
+<div class="layui-container">
+    <div class="layui-row">
+        <form id="form" class="layui-form">
+            <input class="layui-hide" name="id" th:value="${model.id}">
+#set($pre="${")
+#set($mid="model.")
+#set($sur="}")
+		 	## ----------  BEGIN 字段循环遍历  ----------
+			#foreach($field in ${table.fields})
+			<div class="layui-form-item">
+                            <label class="layui-form-label">${field.comment}</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="${field.propertyName}" required lay-verify="required" placeholder="请输入${field.comment}" autocomplete="off"
+                                       class="layui-input" th:value="$pre$mid${field.propertyName}$sur">
+                            </div>
+                        </div>
+			#end
+			## ----------  END 字段循环遍历  ----------
+        </form>
+    </div>
+</div>
+<div th:include="common/common-script::commonScript"></div>
+<script type="text/javascript">
+    layui.use(['layer', 'form', 'treeselect'], function () {
+    });
+
+    /**
+     * ajax提交表单
+     */
+    function doSubmit() {
+        /**
+         *返回true：有未通过验证项，不能提交表单 false：没有未通过验证项，不能提交表单
+         */
+        var result = layui.form.doVerify();
+        if (!result) {
+            var params = $("#form").serializeObject();
+            ajaxSubmit('save', params);
+        }
+    }
+</script>
+<div th:replace="common/common-footer::commonFooter">
+</div>
+</body>
+</html>

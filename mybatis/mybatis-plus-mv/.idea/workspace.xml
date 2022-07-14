@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c6bca9a4-a1b4-4f1f-879b-15f55734c223" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../softWare/maven/apache-maven-3.5.4" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../softWare/maven/apache-maven-3.5.4/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="environmentProperties">
+      <map>
+        <entry key="mvn -Dmaven.wagon.http.ssl.insecure" value="true package" />
+      </map>
+    </option>
+    <option name="vmOptions" value="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true" />
+  </component>
+  <component name="ProjectId" id="1v1PUu6DGQ4pp2ntmZHGinP8RZR" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mybatis-plus-support/src" />
+      <recent name="$PROJECT_DIR$/mybatis-plus-generate/src" />
+      <recent name="$PROJECT_DIR$/mybatis-plus-core/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MysqlGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.baomidou.mybatisplus.test.generator.MysqlGenerator" />
+      <module name="mybatis-plus-generate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.baomidou.mybatisplus.test.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MysqlGenerator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6bca9a4-a1b4-4f1f-879b-15f55734c223" name="Default Changelist" comment="" />
+      <created>1625726643634</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625726643634</updated>
+      <workItem from="1625726644806" duration="3545000" />
+      <workItem from="1626168095882" duration="342000" />
+      <workItem from="1626661859433" duration="13000" />
+      <workItem from="1629775204337" duration="1485000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1388" height="457" key="GridCell.Tab.0.bottom" timestamp="1629776691551">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1388" height="457" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1629776691551" />
+    <state width="1388" height="234" key="GridCell.Tab.0.bottom/0.25.1440.819@0.25.1440.819" timestamp="1626168438291" />
+    <state width="1388" height="457" key="GridCell.Tab.0.center" timestamp="1629776691550">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1388" height="457" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1629776691550" />
+    <state width="1388" height="234" key="GridCell.Tab.0.center/0.25.1440.819@0.25.1440.819" timestamp="1626168438290" />
+    <state width="1388" height="457" key="GridCell.Tab.0.left" timestamp="1629776691549">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1388" height="457" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1629776691549" />
+    <state width="1388" height="234" key="GridCell.Tab.0.left/0.25.1440.819@0.25.1440.819" timestamp="1626168438289" />
+    <state width="1388" height="457" key="GridCell.Tab.0.right" timestamp="1629776691550">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1388" height="457" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1629776691550" />
+    <state width="1388" height="234" key="GridCell.Tab.0.right/0.25.1440.819@0.25.1440.819" timestamp="1626168438290" />
+    <state width="1388" height="234" key="GridCell.Tab.1.bottom" timestamp="1626168438292">
+      <screen x="0" y="25" width="1440" height="819" />
+    </state>
+    <state width="1388" height="234" key="GridCell.Tab.1.bottom/0.25.1440.819@0.25.1440.819" timestamp="1626168438292" />
+    <state width="1388" height="234" key="GridCell.Tab.1.center" timestamp="1626168438291">
+      <screen x="0" y="25" width="1440" height="819" />
+    </state>
+    <state width="1388" height="234" key="GridCell.Tab.1.center/0.25.1440.819@0.25.1440.819" timestamp="1626168438291" />
+    <state width="1388" height="234" key="GridCell.Tab.1.left" timestamp="1626168438291">
+      <screen x="0" y="25" width="1440" height="819" />
+    </state>
+    <state width="1388" height="234" key="GridCell.Tab.1.left/0.25.1440.819@0.25.1440.819" timestamp="1626168438291" />
+    <state width="1388" height="234" key="GridCell.Tab.1.right" timestamp="1626168438292">
+      <screen x="0" y="25" width="1440" height="819" />
+    </state>
+    <state width="1388" height="234" key="GridCell.Tab.1.right/0.25.1440.819@0.25.1440.819" timestamp="1626168438292" />
+    <state x="142" y="25" width="1155" height="819" key="Maven.ArtifactSearchDialog" timestamp="1625729242120">
+      <screen x="0" y="25" width="1440" height="819" />
+    </state>
+    <state x="142" y="25" width="1155" height="819" key="Maven.ArtifactSearchDialog/0.25.1440.819@0.25.1440.819" timestamp="1625729242120" />
+    <state x="287" y="79" key="NewModule_or_Project.wizard" timestamp="1629776689618">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="287" y="79" key="NewModule_or_Project.wizard/0.25.1440.817@0.25.1440.817" timestamp="1629776689618" />
+    <state x="0" y="0" width="1201" height="900" key="SettingsEditor" timestamp="1625727110390">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="0" width="1201" height="900" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1625727110390" />
+    <state x="156" y="104" width="1127" height="738" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1629776189423">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="156" y="104" width="1127" height="738" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1440.817@0.25.1440.817" timestamp="1629776189423" />
+    <state x="0" y="25" width="1440" height="819" key="new project wizard" timestamp="1625726832260">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="25" width="1440" height="819" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1625726832260" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

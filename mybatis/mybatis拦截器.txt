@@ -1,0 +1,109 @@
+10.缓存：
+   一级缓存，默认开启
+   二级缓存：手动开启，一般都是使用第三方来实现cache接口使用
+   都是可以在set环境变量配置，或者单独mapping.xml文件的指定sql标签上指定是否开启
+
+  	 缓存
+  一级缓存失效的四种情况：
+	不同的SqlSession对应不同的一级缓存
+	同一个SqlSession但是查询条件不同
+	同一个SqlSession两次查询期间执行了任何一次增删改操作
+	同一个SqlSession两次查询期间手动清空了缓存
+
+	二级缓存(second level cache)，全局作用域缓存
+	二级缓存默认不开启，需要手动配置
+	MyBatis提供二级缓存的接口以及实现，缓存实现要求 POJO实现Serializable接口
+	二级缓存在 SqlSession 关闭或提交之后才会生效
+
+11.工作原理
+	代码先是去读取xml配置文件内容，读取环境配置内容，在读取mapping映射文件内容，然后放到一个对象中返回，封装了我们的statementhandle
+	返回的对象创建executor对象，
+	执行statementhandle设置参数用到parametehandle处理结果的时候用到resultestHandle
+	而parameterhandle和resultsethandle有需要typehandle来实现javabean和数据库类型的映射，如此完成整个操作流程
+
+	Executor：更新，查询，事务，刷新，开，关，这些的执行器
+	StatementHandler：处理sql语句预编译，设置参数等相关工作；
+	ParameterHandler：设置预编译参数用的
+	ResultHandler：处理结果集
+	TypeHandler：在整个过程中，进行数据库类型和javaBean类型的映射
+
+
+12.四个核心组件
+	Executor (update, query, flushStatements, commit, rollback, getTransaction, close, isClosed)
+		1.创建executor
+		2.是否创建缓存
+		3.调用拦截器，如果代码调用的有就进入拦截器，没有就不操作
+		4.返回deflautsqlSession对象
+	ParameterHandler (getParameterObject, setParameters)
+	设置预编译参数用的
+
+	ResultSetHandler (handleResultSets, handleOutputParameters)
+	1.返回数据集
+	StatementHandler (prepare, parameterize, batch, update, query)
+	1.创建预编译
+
+2.创建一个拦截器链
+	默认情况下，MyBatis 允许使用插件来拦截的方法调用包括：
+	Executor (update, query, flushStatements, commit, rollback, getTransaction, close, isClosed)
+	ParameterHandler (getParameterObject, setParameters)
+	ResultSetHandler (handleResultSets, handleOutputParameters)
+	StatementHandler (prepare, parameterize, batch, update, query)
+
+	Interceptor接口
+		Intercept：拦截目标方法执行
+		plugin：生成动态代理对象，可以使用MyBatis提供的Plugin类的wrap方法
+		setProperties：注入插件配置时设置的属性
+
+	实现步骤：
+
+	1.编写插件实现Interceptor接口
+	  实现方法 1. intercept 拦截方法
+	          2.plugin 通过代理方式指定代理插件对象
+	          3.setProperties配置文件加载信息，这个方法先执行
+	2.实现接口 @Intercepts注解完成插件签名 
+	  需要指定插件拦截组件，组件的里面的那个方法，方法的参数
+	  @Signature(type=StatementHandler.class,method="parameterize",args=java.sql.Statement.class)
+	
+	2.在全局配置文件中注册插件
+	<configuration>
+		<plugins>
+			<plugin interceptor="com.lun.c08.interceptor.MyFirstPlugin">
+				<properties>这里配个properties数据<properties>
+			</plugin>
+			<!-- 可实现多个插件 -->
+			<plugin interceptor="com.lun.c08.interceptor.MySecondPlugin"></plugin>
+		</plugins>
+	...
+
+
+
+
+批量保存
+	openSession 方法的 ExecutorType 类型的参数，枚举类型:
+	ExecutorType.SIMPLE: 这个执行器类型不做特殊的事情（这是默认装配的）。它为每个语句的执行创建一个新的预处理语句。
+	ExecutorType.REUSE: 这个执行器类型会复用预处理语句。
+	ExecutorType.BATCH: 这个执行器会批量执行所有更新语句
+
+	SqlSession openSession = sqlSessionFactory.openSession(ExecutorType.BATCH);
+
+
+	//批量：（预编译sql一次==>设置参数===>10000次===>执行（1次））
+	//Parameters: 616c1(String), b(String), 1(String)==>4598
+	//非批量：（预编译sql=设置参数=执行）==》10000    10200
+
+	与Spring整合中，我们推荐，额外的配置一个可以专门用来执行批量操作的SqlSession
+	<!--配置一个可以进行批量执行的sqlSession  -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
+		<constructor-arg name="executorType" value="BATCH"></constructor-arg>
+	</bean>
+    
+    
+    spring中注入使用
+    @Autowired
+	private SqlSession sqlSession;
+
+
+	插件是MyBatis提供的一个非常强大的机制，我们可以通过插件来修改MyBatis的一些核心行为。 插件通过动态代理机制，可以介入四大对象的任何一个方法的执行。
+
+	了解mybatis运行原理才能更好开发插件。
