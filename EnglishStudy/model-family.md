@@ -82,7 +82,55 @@ fit together 彼此相容
 
 # Lesson2
 
-
+the key to 关键是
+move in 搬进；生活于
+cottage 小别墅
+indoor-outdoor室内外的
+family room 家庭娱乐室
+creepy 邻人毛骨悚然的
+steam shower 蒸气浴
+real estate agent 房地产经纪人
+mogul 大亨
+caravan 参加旅行队；
+coconuts 椰子
+have someone over 邀请某人作客
+ridicule 嘲笑，奚落
+loudmouth 大嘴巴的人
+bully 欺凌弱小者，土霸
+little bo peed 小姑凉
+toddler play class 亲子课
+toddler 学步的小孩
+paisley 多色漩涡团的毛织品
+tank top背心装
+just chill 开玩笑
+fit in 适应，适合
+terrify 恐吓
+rub someone wrong way 惹怒某人
+khakis 卡其裤
+polo shirt 球衣；马球衫
+limo 豪华轿车
+take pride in 以。。。为骄傲
+jerk 蠢人
+heed 注意；留心
+toned-down 缓和；柔和；降低
+appointment viewing 定时收看（电视节目）
+take turns 轮流；依次
+scoot快走
+in this case 既然这样
+act on 按照。。。行事
+swipe 偷窃
+get a break 打个折
+milord老爷，大人。大哥
+you blew it 你搞砸了
+screwdriver 螺丝刀
+sneak around 偷偷摸摸
+hide sth from sb 隐瞒
+hilarious 非常滑稽
+darn 太（比damn礼貌的形式）
+i would have killed with this crowd我本可以在这里大放光彩的
+craps table 赌桌上
+work out 实现，解决
+hang in坚持
 
 
 

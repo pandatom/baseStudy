@@ -1,0 +1,16 @@
+package com.changxiong.Temple;
+
+public class PureSoyaMilk extends SoyaMilk{
+
+    @Override
+    void addCondiments() {
+        //ø’ µœ÷
+    }
+
+    @Override
+    boolean customerWantCondiments() {
+        return false;
+    }
+
+}
+

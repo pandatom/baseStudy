@@ -1,0 +1,17 @@
+package com.changxiong.Strategy;
+
+public class PekingDuck extends Duck {
+
+    // 假如北京鸭可以飞翔，但是飞翔技术一般
+    public PekingDuck() {
+        flyBehavior = new BadFlyBehavior();
+        quackBehavior = new GaGaQuackBehavior();
+    }
+
+    @Override
+    public void display() {
+        System.out.println("~~北京鸭~~~");
+    }
+
+}
+
