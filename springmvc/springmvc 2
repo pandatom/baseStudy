@@ -1,0 +1,252 @@
+springmvc
+
+Spring MVC 和 struts2
+
+	1	从设计原理上讲
+		spring mvc 单例 非线程安全
+		struts2	多例	线程安全	对每个请求都产生一个实例
+	2	从请求入口以及前端总控制器说
+		spring mvc的入口是servlet，而struts2是filter
+		spring mvc 的前端总控制器为 DispatcherServlet
+		struts2 的前端总控制器为 FilterDispatcher (StrutsPrepareAndExecuteFilter)
+	3	从参数传递上
+		struts是在接受参数的时候，可以用属性来接受参数，这就说明参数是让多个方法共享的。
+		springmvc 用方法来接受参数
+	4	从设计模式上
+		spring mvc是基于方法的设计,而sturts是基于类
+
+	-------
+
+	（1）springmvc的入口是一个servlet即前端控制器（DispatchServlet），而struts2入口是一个filter过虑器（StrutsPrepareAndExecuteFilter）。
+
+	（2）springmvc是基于方法开发(一个url对应一个方法)，请求参数传递到方法的形参，可以设计为单例或多例(建议单例)，struts2是基于类开发，传递参数是通过类的属性，只能设计为多例。
+
+	（3）Struts采用值栈存储请求和响应的数据，通过OGNL存取数据，springmvc通过参数解析器是将request请求内容解析，并给方法形参赋值，将数据和视图封装成ModelAndView对象，最后又将ModelAndView中的模型数据通过reques域传输到页面。Jsp视图解析器默认使用jstl。
+
+
+
+
+SpringMVC运行原理:
+	整个处理过程从一个HTTP请求开始：
+	1.Tomcat在启动时加载解析web.xml,找到spring mvc的前端总控制器DispatcherServlet,并且通过DispatcherServlet来加载相关的配置文件信息。
+	2.DispatcherServlet接收到客户端请求，找到对应HandlerMapping，根据映射规则，找到对应的处理器（Handler）。
+	3.调用相应处理器中的处理方法，处理该请求后，会返回一个ModelAndView。
+	4.DispatcherServlet根据得到的ModelAndView中的视图对象，找到一个合适的ViewResolver（视图解析器），根据视图解析器的配置，DispatcherServlet将要显示的数据传给对应的视图，最后显示给用户。
+
+	请求到dispatchervlet中，先获取所有的handler，在通过handler找到对应的适配器，然后开始handler的prehandle拦截
+	链没有拦截放行，执行目标方法（这里有），目标放执行返回数据（内容协商messageconvert，协商发送端和sprngmvc能发送和接受的格式），然后在经过posthandler 的拦截链，再到dispatch中，这是拿到数据，在拿数据和前端html页面做渲染，渲染返回渲染的数据还要经过aferhandler拦截器
+
+	一个方法实现implements HandlerInterceptor有的方法
+	1.preHandle
+	2.postHandle
+	3.afterCompletion
+
+
+http://note.youdao.com/noteshare?id=a64434eebe60e55838be601525a73858
+
+
+异常
+	java 异常是程序运行过程中出现的错误。异常类Exception又分为运行时异常(RuntimeException)和非运行时异常(非runtimeException)
+	Error与Exception 
+	Error是程序无法处理的错误，比如OutOfMemoryError、ThreadDeath等。
+	这些异常发生时，Java虚拟机（JVM）一般会选择线程终止。
+	Exception是程序本身可以处理的异常，这种异常分两大类运行时异常和非运行时异常。程序中应当尽可能去处理这些异常。
+	
+		运行时异常和非运行时异常      
+			运行时异常: 都是RuntimeException类及其子类异常：				   				
+				IndexOutOfBoundsException 索引越界异常
+				ArithmeticException：数学计算异常
+				NullPointerException：空指针异常
+				ArrayOutOfBoundsException：数组索引越界异常
+				ClassNotFoundException：类文件未找到异常
+				ClassCastException：造型异常（类型转换异常）
+			
+			这些异常是不检查异常（Unchecked Exception），程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序逻辑错误引起的。
+			
+		非运行时异常:是RuntimeException以外的异常，类型上都属于Exception类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。
+			如：
+				IOException、文件读写异常
+				FileNotFoundException：文件未找到异常
+			 	EOFException：读写文件尾异常
+				MalformedURLException：URL格式错误异常
+				SocketException：Socket异常
+				SQLException：SQL数据库异常
+ 
+
+
+图片解析器参数解释:
+	defaultEncoding="UTF-8" 是请求的编码格式，默认为iso-8859-1
+	maxUploadSize="5400000" 是上传文件的大小，单位为字节B(5M)
+	uploadTempDir="fileUpload/temp" 为上传文件的临时路径\
+
+
+
+
+
+url-pattern
+
+	<url-pattern> .action或者.do </url-pattern> 只拦截请求后缀为.action或者.do为后缀的请求
+
+	<url-pattern> / </ url-pattern>  不会匹配到*.jsp，即：*.jsp不会进入spring的 DispatcherServlet类 。
+		(.html	.css	.js 	.png	.jpg)
+
+	<url-pattern> /* </url-pattern> 会匹配*.jsp，会出现返回jsp视图时再次进入spring的DispatcherServlet 类，导致找不到对应的controller所以报404错。 
+		(.html	.css	.js 	.png	.jpg 	.jsp)
+
+
+=====================================================
+
+1、什么是Spring MVC ？简单介绍下你对springMVC的理解?
+
+2、SpringMVC的流程？
+	SpringMVC中的HandlerAdapter，就使用了适配器模式，SpringMVC处理请求的流程回顾：
+
+	首先用户请求到达前端控制器 dispatcherServlet 的 doDispatch() 方法
+	在 doDispatch() 中，通过 HandlerMapping 找到用户请求的 Handler（处理器）
+	通过 Handler 执行目标方法，获得本次访问结果：ModelAndView 对象
+	接着调用 InternalResourceViewResolve 对返回的 ModelAndView 对象进行解析，找到指定的资源
+	目标资源（JSP 页面或者 JSON 字符串）最终都会以 JSON 字符串的形式返回给 Tomcat
+	Tomcat 将字符串 以 HTTP 协议的方式返回给浏览器
+
+	这里使用到适配器模式：Spring 定义了一个适配接口，使得每一种 Controller有一种对应的适配器实现类，适配器代替 Controller 执行相应的方法
+
+
+	前端控制器 DispatcherServlet：接收请求、响应结果，相当于转发器，有了DispatcherServlet 就减少了其它组件之间的耦合度。
+	处理器映射器 HandlerMapping：根据请求的URL来查找Handler
+	处理器适配器 HandlerAdapter：负责执行Handler
+	处理器 Handler：处理器，需要程序员开发
+	视图解析器 ViewResolver：进行视图的解析，根据视图逻辑名将ModelAndView解析成真正的视图（view）
+	视图View：View是一个接口， 它的实现类支持不同的视图类型，如jsp，freemarker，pdf等等
+
+8、如何解决POST请求中文乱码问题，GET的又如何处理呢？
+
+
+ 在web.xml中加入：
+<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+以上可以解决post请求乱码问题。
+对于get请求中文参数出现乱码解决方法有两个：
+
+修改tomcat配置文件添加编码与工程编码一致，如下：
+
+<Connector URIEncoding="utf-8" connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+
+另外一种方法对参数进行重新编码：
+String userName new 
+String(request.getParamter("userName").getBytes("ISO8859-1"),"utf-8")
+
+ISO8859-1是tomcat默认编码，需要将tomcat编码后的内容按utf-8编码
+
+
+9、SpringMvc里面拦截器是怎么写的：
+
+11、SpringMvc怎么和AJAX相互调用的？
+
+12、Spring MVC的异常处理 ？
+	HandlerExceptionResolver
+	1.定义异常处理器，返回modeview对象到错误页面，自己写个错误界面
+	public class CustomExceptionResolver implements HandlerExceptionResolver {
+	注入异常处理器到springmvc中
+	<bean id="handlerExceptionResolver" class="cn.itcast.ssm.controller.exceptionResolver.CustomExceptionResolver"/>
+    遇到错误直接抛出即可
+	throw new CustomException("商品信息不存在!");
+13、SpringMvc的控制器是不是单例模式？如果是，有什么问题？怎么解决？
+是单例模式，在多线程访问的时候有线程安全问题，解决方案是在控制器里面不能写可变状态量，如果需要使用这些可变状态，可以使用ThreadLocal机制解决，为每个线程单独生成一份变量副本，独立操作，互不影响
+
+
+14、如果在拦截请求中，我想拦截get方式提交的方法，怎么配置？
+
+20、怎么样把ModelMap里面的数据放入Session里面？
+
+12. Springmvc 用什么对象从后台向前台传递数据的？
+
+13.rest风格
+    主要和http协议操作动词get、post、put、delete 几个操作词吻合
+    更加规范化
+
+@PathVariable
+@RequestParam required defaultValue
+@CookieValue 绑定请求中的cookie的值
+
+pojo是springmvc自动绑定的
+如果提交的参数很多，或者提交的表单中的内容很多的时候可以使用pojo接收数据。要求pojo对象中的属性名和表单中input的name属性一致。
+
+控制器方法返回的值ModeAndView
+Map及Model入参为
+@SessionAttribute
+
+@ModelAttribute 会在请求之前执行的方法
+
+如果使用Model则可以不使用ModelAndView对象，Model对象可以向页面传递数据，View对象则可以使用String返回值替代。不管是Model还是ModelAndView，其本质都是使用Request对象向jsp传递数据。
+
+
+
+6.4.3自定义Converter
+public class DateConverter implements Converter<String, Date> {
+
+7springmvc与struts2不同
+1、springmvc的入口是一个servlet即前端控制器，而struts2入口是一个filter过虑器。
+2、springmvc是基于方法开发(一个url对应一个方法)，请求参数传递到方法的形参，可以设计为单例或多例(建议单例)，struts2是基于类开发，传递参数是通过类的属性，只能设计为多例。
+3、Struts采用值栈存储请求和响应的数据，通过OGNL存取数据， springmvc通过参数解析器是将request请求内容解析，并给方法形参赋值，将数据和视图封装成ModelAndView对象，最后又将ModelAndView中的模型数据通过reques域传输到页面。Jsp视图解析器默认使用jstl。
+
+
+
+上传文件 MultipartFile 对象是一个外部jar引入的
+
+拦截器HandlerInterceptor 记得到xml配置拦截器信息
+前拦截，执行后但未返回视图前拦截，返回视图后拦截
+
+
+
+14. Springmvc 中对于文件的上传有哪些需要注意
+在页面form中提交enctype="multipart/form-data"的数据时，需要springmvc对multipart类型的数据进行解析。
+在springmvc.xml中配置multipart类型解析器。
+方法中使用：MultipartFile attach (单个文件上传) 或者 MultipartFile[] attachs (多个文件上传)
+
+
+
+
+spring和springmvc整合重复加载bean如何处理
+在配置里面规定只扫描那些注解类，比如springmvc只扫描带@controller的类
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
