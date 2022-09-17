@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise API - race</title>
+</head>
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('OK');
+            }, 1000);
+        })
+        let p2 = Promise.resolve('Success');
+        let p3 = Promise.resolve('Oh Yeah');
+
+        //状态，由第一个改变的状态的promise来决定。就像是p1、p2、p3三个promise在赛跑，谁先成功以谁的状态为准
+        const result = Promise.race([p1, p2, p3]);
+
+        console.log(result);
+
+    </script>
+</body>
+
+</html>
