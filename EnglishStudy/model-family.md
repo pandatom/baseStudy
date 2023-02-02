@@ -636,17 +636,746 @@ she;s a complete package 她是个完美无缺的人;她是女神
 
 # lesson10
 
+live up to 符合做到无愧于
+
+live up to one's words 履行诺言说的与做的一个样
+
+respiratory 呼吸系统
+
+cheer up 高兴起来振作起来使高兴使振奋
+
+coup 政变，成功之举
+
+kick out 踢出界逐出解雇把球踢出界
+
+Is there a slap mark on my face?简直狠狠的打了我一巴掌？
+
+lackluster! 逊毙了
+
+confess 供认，招供，承认
+
+put sb through 为某人接通电话；使某人经历
+
+toss 抛，扔
+
+pander 迎合
+
+there you go 行不
+
+sharp 锋利的；尖的；（沙子，沙砾）由尖颗粒组成的；急转弯的；急剧的 *adv.*正点，准时；
+
+​         9:00 sharp 九点整
+
+pushover 容易做的，容易打倒的
+
+up to 直到,胜任,多达,取决于
+
+odd jobs 零工，零活儿
+
+know the  drill /'dril/ to know how something id done: to be familiar with a regular process,procedure,etc.
+
+
+
+# lesson11
+
+irritate 不耐烦的
+
+cologne 古龙香水
+
+talk back 顶嘴，反驳
+
+soak 湿透了；浸泡；
+
+weasel 黄鼠狼
+
+curvy 弯曲的
+
+head out to 起身前往。。。
+
+cuddle搂抱，拥抱；紧靠…而坐(或躺)，依偎；<非正式>取悦，讨好（cuddle up to）
+
+convulse 震撼，是剧烈震动
+
+infuriating 令人恼火的
+
+scenario 方案，情节；设想；剧本
+
+condescended 对某人表现出优越感
+
+racccon 浣熊
+
+conbine 联合收割机
+
+smut 	淫秽的内容
+
+sleepover 留宿聚会
+
+delicate 微妙的，棘手的
+
+chump 笨蛋
+
+casino 赌场
+
+
+
+# lesson12
+
+go out the back 从后门出去
+
+turn back on 不理睬
+
+bend over 俯身
+
+bloomer 灯笼裤
+You made that up!   你瞎编！
+
+nuisance麻烦的事
+
+matter of face 实际上
+
+mortify 使。。。受辱
+
+maniac 疯子
+
+incapable 无能力的无能的无资格的不能的
+
+obsessive 痴迷的，强迫的
+
+mandatory 强制的
+
+freaky 琢磨不定的
+
+off-ramp 匝道
+
+monocle 单镜片
+
+dirbble运球
+
+an utter delight 一个正人君子
 
 
 
 
 
+# lesson13
+
+the opposite of ...的对立面。
+
+quadruple bypass 心脏搭桥
+
+silk boxer 平角短裤
+
+Babysitting 临时保姆看顾小孩当临时保姆带孩子
+
+hunky 匈牙利人英俊的高壮的高大的	
+
+noche 晚上
+
+stick around 在附近; 逗留或等待在附近等着; 在邻近勾留或等候 ;逗留
+
+figure out 计算出;想出;理解
+
+come out of the closet 出柜
+
+snowflake雪花
+
+faze 打扰;折磨;烦人的;
+
+hit on xxx 搭讪xxx
+
+commitment 忠诚，献身；承诺，保证；奉献，投入；热情，决心；义务，责任；花费，使用（资金、时间、人力）；需要定期支付的款项
+
+bring up 提出；教育；养育；呕出；（船等）停下
+
+driving range 高尔夫练习场
+
+get cocky 骄傲，自鸣得意
+
+Admit defeat 认输;赢棋认输;承认失败
+
+pop over 短暂逗留；
+
+jam 果酱；堵塞，拥挤；麻烦，困境；<非正式>爵士乐（摇滚乐）即兴演奏会；卡住，轧住
 
 
 
 
 
+# lesson14
 
+pancake [c] 薄饼
+
+recycle [v] 回收利用
+
+make a big deal 对•…有太大反应;把⋯当成大事
+
+have a clue 聪明
+
+had quite the little career
+
+going 当年前途大好
+
+account manager 客户经理
+
+cubicle /*kju:bikal/ [c] /JuS间
+
+work pump 跟电影《上班女郎》一样
+
+make quite a splash 惹人注目的
+
+bundle [c] 婴儿
+
+bundle of joy 小可爱；小美人
+
+help out 解决难题
+
+the Supreme Court 最高法院
+
+steely 钢铁般的，似钢铁的；顽强的	
+
+grizzle 灰色（物）；斑白的头发
+
+veteran [c]退伍军人;老兵;老战
+
+versus 与…相对；对抗
+
+kook <口＞狂热粉丝；怪人,疯子,傻瓜
+
+racquetball / rakotbo:|/ 网拍墙球
+
+in a row it
+
+plague [n] EA
+
+locker room 更衣室
+
+take kindly to 喜欢；乐于接受；
+
+Tom Sellecks 人名做动词，画上胡子
+
+back out 退出，放弃，食言
+
+cold feet 犹豫；害怕；胆怯；
+
+terrific 极好的，了不起的liberal 随意的；不拘束的
+
+towel毛巾，手巾
+
+heads-up sinformal>提醒
+
+picture [v]tS
+
+atighty-whitey guy 此处意为
+
+紧身白色内裤的人
+
+do me a favor 帮个忙好么；给我点面子
+
+mop 擦干；用拖把拖洗
+
+lame 蹩脚的；逊爆了
+
+trash talk 难听话
+
+glance 扫祝；瞥见；擦过
+
+moon landing 此处意为 “碰屁股”
+
+splashdown 溅落；此处意为湿身亲吻”
+
+humpy 猥琐的
+
+test-drive 试车，尝试
+
+soup strainer 滤汤器
+
+come back in a big way if 起来
+
+high 嗑药嗑嗨了
+
+porte-potty 便盆
+
+yummy mummy 性感妈妈
+
+squeeze into 挤进去
+
+trench 战壕；堑壕；此处意为职场
+
+bastard 混账；此处指老板
+
+miserable 痛苦的
+
+out of nowhere 突然
+
+yummy mummy 性感妈妈
+
+squeeze into 挤进去
+
+trench 战壕；堑壕；此处意为职场
+
+bastard 混账；此处指老板
+
+miserable 痛苦的
+
+out of nowhere 突然
+
+honk 按汽车喇叭
+
+horn 汽车喇叭
+
+run out 耗尽；此处意为坏掉了
+
+hinder tu5
+
+distract 转移；分心
+
+fabulous 难以置信的；极好的average 平均的；平庸的
+
+average 平均的；平庸的
+
+rocket fuel 火箭燃料；此处意
+
+为让人很爽的东西
+
+high five t low two «*me»
+
+go up against 对抗
+
+throw to the wolves 送入虎
+
+口；推进火坑
+
+division 分部门；分公司
+
+jump out of that sentence
+
+more 意为哪个词更为震撼
+
+vacuum 用真空吸尘器清扫(某物)
+
+radiator 散热器
+
+cross the fingers 为⋯…祈祷
+
+covet 涎；觊觎
+
+the Continent 欧洲大陆
+
+pity 对⋯表示怜悯
+
+take the high road 堂堂正正
+
+bathroom 厕所
+
+check it out 来看看吧
+
+fairy tale 神话故事,童话
+
+potion（药物、毒物或有魔力的）
+
+饮料
+
+frat house 兄弟会
+
+spill 使溢出，使流出
+
+she’ severy women 他是个
+
+出色的女人
+
+immature 不成熟的；未成熟的
+
+go over 回顾；复习
+
+put the dogs on a row - 44
+
+不“狗”
+
+strap 皮带；带
+
+up for 打算；有待于；准备在选举中被提名
+
+tiquor 酒，含酒精饮料
+
+rug 小块地毯
+
+wonky 出错的
+
+conclude business 谈业务
+
+impress 给⋯以深刻印象，使
+
+铭记
+
+booze-drenched 浑身酒气的
+
+fornicate 私通;通奸
+
+stairwell 楼梯口
+
+hotshot 高手;能人
+
+uptight 保守的
+
+strand 使陷于困境
+
+might as well 不妨
+
+compose 使安定，使镇静
+
+belittle 轻视；贬低
+
+Mammongoridanifi
+
+reject 排斥
+
+mustard 芬；芥末
+
+coveted time slot 黄金时间段
+
+daybreak 狒晓，黎明
+
+petty 小气的；琐碎的
+
+make someone pay 有人要付
+
+出代价
+
+clutch movie 经典电影
+
+
+
+
+
+# lesson15
+
+valentine’ s day 情人节
+
+cannoli canoe 奶油蛋糕
+
+swanky 时髦的
+
+wrestler 摔跤选手
+
+salsa dancing 莎莎舞
+
+magician 魔术师
+
+comedian 喜剧演员
+
+hilarious 引人捧腹大笑的;滑稽
+
+MASAton bilibili
+
+的
+
+mallet 槌；木槌
+
+get hit in the head 此处意为
+
+“打头逗笑”
+
+observations 观察
+
+indicate 表明，告诉
+
+boa Eart
+
+repurpose 重新调整，重新改造
+
+sort of a Bob Mackie meets
+
+Martha Stewart project ItS
+
+意为 “混搭风”
+
+trace 痕迹
+
+Not in the spirit 此处可以理解为 “不喜欢”
+
+closing argument 结案陈词
+
+rehear #4
+
+tasty 迷人的，性感的
+
+a token of my affection & {I
+
+着我的爱
+
+black light 紫外灯
+
+blow your mind 让你意乱情
+
+迷
+
+hand-picked 精心挑选
+
+steam #i
+
+medicine cabinet 药箱
+
+take a nap 睡个午觉
+
+naughty 色情的
+
+role-playing 角色扮演
+
+set up sleepovers 安置在外过
+
+夜
+
+swing by lak
+
+pick up 接某人
+
+a polomatch 马球比赛
+
+Honorable 尊敬的，高尚的
+
+wreck ThIT
+
+petal 花瓣
+
+commemorate 纪念
+
+settle [v] #DA7
+
+nail 证明⋯有罪
+
+frustrating 受打击的，令人沮丧的
+
+roll over 压住，欺压
+
+the state seal 国徽
+
+the Great Lakes 五大湖
+
+shoot 看，瞥（一眼）
+
+reclaim [v]夺回，挽回
+
+do a pull-up 做引体向上
+
+belly #7
+
+be belly up to 倚靠在
+
+straw I€
+
+rear 臀部；屁股
+
+ends live longer 更长寿
+
+robber Sm
+
+convention 大型会议
+
+trade show 交易会，贸易展
+
+electroacoustic transducer
+
+电声换能器
+
+Miss America Pageant 美国小
+
+姐（选美）\
+
+smooth 能言善辩的；园滑的；
+
+会搭讪的
+
+pretty smooth all over 全身光滑
+
+the Boy Scout 童子军
+
+merit badge 勋章
+
+beloved 心爱的人
+
+attentive 关心的；细心的
+
+pouring my core beliefs into
+
+用尽精力；呕心沥血；费尽心机
+
+dramatic 戏剧性的
+
+ratify 正式签署，批准
+
+Bible 圣经
+
+turn out the light #/J
+
+corporate office 公司办公室
+
+random 随机的
+
+cheat *h
+
+go into a coma 一睡不起
+
+coma [c] FEM
+
+underwear 内裤
+
+cheesy garlic bread 芝士蒜蓉
+
+面包
+
+copious 大量的;丰富的;充足
+
+的
+
+the cutest girl “校花”
+
+makes science lab seem like
+
+recess
+
+这句话表达这个女孩很美
+
+establishment 公司，企业
+
+satisfaction 满足；满意guarantee 保证；满足
+
+recite Him
+
+get your butt kicked #I*
+
+claim ownership 宣布所有权
+
+percentile 百分位（数)之一
+
+counselor 律师；顾问
+
+darn [强调】该死的；完全的
+
+give it a shot 试一试
+
+speaker 扩音器
+
+chilly 寒冷的
+
+jammed 卡住的
+
+
+
+
+
+# lesson16
+
+the middle of the nigh 午夜时分
+
+perfectionist 完美主义之
+
+pigeon 鸽子
+
+shifty 鬼鬼崇崇的；狡诈的
+
+bedspread
+
+driver's license 驾照
+
+hound IVt] 纠缠
+
+freak out 使••崩溃
+
+That's fine by me 我很好；我没问题
+
+focus on two things at once -
+
+心二用
+
+hound IVt] 纠缠
+
+freak out 使••崩溃
+
+That's fine by me 我很好；我没问题
+
+focus on two things
+
+armor 盔甲
+
+arrowhead 箭头
+
+dolly 洋娃娃
+
+frilly 有褶边的
+
+lesbian / lezbion/ 女同性恋者
+
+pediatrician / pidio'triSon/JL##
+
+医生
+
+lrrelevant 无关的；此处提示“别
+
+跑题”
+
+bold 冒味的；大胆的
+
+brunch [n] 早午餐
+
+pediatrician / pidio'triSon/JL##
+
+医生
+
+lrrelevant 无关的；此处提示“别
+
+跑题”
+
+bold 冒味的；大胆的
+
+brunch [n] 早午餐
+
+roller coaster 过山车
+
+fancy ponce 高等皮条客
+
+rattle 使•…•害怕
+
+recon (reconnaissance] [ula the lay of the land #U#
+
+skigoggle 滑雪护目镜
+
+old man 情人；丈夫；老头子；父亲
+
+rattle使）咯咯作响；（车辆） 嘎拉嘎拉地响，（移动时）隆隆作响；使慌张，使紧张；呆在......里，占用（大得不必要的房间或建筑）；喋喋不休地讲话（rattle on）
+
+take it down a notch 意为冷静
+
+take his mind off 放松一
+
+woozy 头香脑帐的
+
+barbershop 理发店
+
+spin [Vt] DESt
+
+pier 码头
+
+nailed it 搞定了（非正式）
+
+
+
+# lesson20
+
+no biggie 没什么大不了;不要紧
+
+check with 与…协商；与…相符合 check with you ...
+
+Regulatory 监督;管理;调整的; 规章的
+
+training bra 少女胸罩
+
+
+
+# lesson21
+
+come along 出现;进展;一道来;进步
+
+come along with 随同;取得成功;进展;	伴同
 
 
 
