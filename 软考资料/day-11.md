@@ -62,6 +62,8 @@
 
 ![image-20230220142615175](day-11.assets/image-20230220142615175.png)
 
+![image-20230504124521736](D:\gitFile\baseStudy\软考资料\day-11.assets\image-20230504124521736.png)
+
 ![image-20230220142748064](day-11.assets/image-20230220142748064.png)
 
 

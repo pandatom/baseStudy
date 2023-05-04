@@ -142,7 +142,7 @@
 
 
 
-![image-20230217100532578](day-06.assets/image-20230217100532578.png)
+![ ](day-06.assets/image-20230217100532578.png)
 
 ![image-20230217212138121](day-06.assets/image-20230217212138121.png)
 
